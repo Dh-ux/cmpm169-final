@@ -1,0 +1,150 @@
+
+body{
+  background: #000000;
+}
+
+.content{
+  position: absolute;
+  width: 20rem;
+  height: 5rem;
+  margin: auto;
+  left: 40%;
+  top: 75%;
+}
+/* .content .content-left{
+  position: relative;
+  text-decoration-color: aliceblue;
+} */
+
+.content .content-right{
+  width: 20rem ;
+  height: 5rem;
+  background: #6192c71d;
+  background-size: 100% 100%;
+  float: right;
+  position: relative;
+}
+
+.right-infp{
+  width: 10rem;
+  height: 5rem;
+  margin: auto auto;
+  vertical-align: center;
+  position: absolute;
+  top:1.0rem;
+  left: 0.9rem;
+}
+.right-infp label {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.right-infp-name{
+  width: 100%;
+  height: 1.2rem;
+  background-size: 100% 100%;
+  line-height: 0.45rem;
+  margin-bottom: 0.8rem;
+  margin-left: 2.0rem;
+  position: relative;
+}
+
+.right-infp-name label{
+  height: 0.5rem;
+  background: none !important;
+  color: #6193C7;
+  outline: none;
+  -webkit-tap-highlight-color:rgba(255,0,0,0);
+  position: relative;
+}
+.right-infp-name input{
+  width: 85%;
+  border: none;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  background: none !important;
+  color: #6193C7;
+  padding-left: 0.15rem;
+  /*box-shadow: 0 0 1px #00eaff;*/
+  outline: none;
+  -webkit-tap-highlight-color:rgba(255,0,0,0);
+  position: absolute;
+}
+
+svg{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+svg circle{
+  stroke: #6193C7;
+}
+
+.circle{
+  transform-origin: center ;
+}
+#arc1{
+  stroke-dasharray: 32;
+  stroke-dashoffset: 18;
+  animation: 10s -2s rota infinite linear;
+}
+#arc4{
+  stroke-dasharray: 400;
+  stroke-dashoffset: 800;
+  animation: 6s 1s rota infinite linear reverse;
+}
+#arc5{
+  stroke-dasharray: 400;
+  stroke-dashoffset: 650;
+  animation: 4s 1s rota infinite linear;
+}
+#arc7{
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: 4s 1s rota infinite linear reverse;
+}
+@keyframes rota{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+/* navigation bar */
+ul#navigation-bar {
+  list-style-type: none;
+  padding-top: 0px;
+  padding: 30px;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+ul#navigation-bar li {
+  display: inline;
+}
+
+ul#navigation-bar a {
+  padding: 5px;
+  font-family: "Josefin Sans";
+  padding-right: 10px;
+  background-color: #6193C7;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+
+
+}
+
+ul#navigation-bar a:hover {
+  color: white;
+  font-weight: bold;
+  background-color: #75A0CC;
+}
+

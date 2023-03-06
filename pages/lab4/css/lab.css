@@ -1,0 +1,82 @@
+h1 {
+    font-family: Helvetica;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  h4 {
+    font-family: "Courier New";
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  img {
+    width: 200px;
+    margin: 30px;
+    border: 30px solid white;
+    border-bottom: 50px solid white;
+    text-align: center;
+    border-radius: 20px;
+  }
+  
+  p {
+    
+    text-indent: 50px;
+    font-family: "Courier New";
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
+    padding-top: 50px;
+  }
+  
+  div {
+    margin: 80px;
+    font-family: "Courier New";
+  }
+  
+  #content {
+    background-color: #eae0d0;
+    border-radius: 10px;
+    padding: 30px;
+  }
+  
+  .intro {
+    column-count: 2;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+  }
+  
+  /* navigation bar */
+  ul#navigation-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 18px;
+    font-family: "Courier New";
+  }
+  
+  ul#navigation-bar li {
+    display: inline;
+    border-radius: 3px;
+  }
+  
+  ul#navigation-bar a {
+    padding: 20px;
+    background-color: #dcd8d0;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  ul#navigation-bar a:hover {
+    color: #968d81;
+    font-weight: bold;
+  }
+  /**************************/
+  
