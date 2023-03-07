@@ -1,81 +1,97 @@
-h1 {
-  font-family: Helvetica;
-  font-size: 30px;
-  text-align: center;
-}
 
-h4 {
-  font-family: "Courier New";
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
+.container {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin: auto;
+}
+.figure {
+  position: absolute;
+  top: 30%;
+  left: 18%;
+  width: 300px;
+  height: 400px;
+}
+#figure1 {
+  z-index: 1;
+}
+#figure2 {
+  z-index: 2;
+  transform: rotate(90deg);
 }
 img {
-  width: 200px;
-  margin: 30px;
-  border: 30px solid white;
-  border-bottom: 50px solid white;
-  text-align: center;
-  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-p {
-  
-  text-indent: 50px;
-  font-family: "Courier New";
-  font-size: 18px;
-  line-height: 1.5;
-  text-align: justify;
-  padding-top: 50px;
-}
-
-div {
-  margin: 80px;
-  font-family: "Courier New";
-}
-
-#content {
-  background-color: #eae0d0;
-  border-radius: 10px;
-  padding: 30px;
-}
-
-.intro {
-  column-count: 2;
-  padding-left: 10%;
-  padding-right: 10%;
-  text-align: center;
-}
-
-/* navigation bar */
-ul#navigation-bar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  overflow: hidden;
+.panel {
   position: fixed;
   top: 0;
-  width: 100%;
-  font-size: 18px;
-  font-family: "Courier New";
+  height: 100%;
+  width: 500px;
+  background-color: #04061c;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 20px;
 }
 
-ul#navigation-bar li {
-  display: inline;
-  border-radius: 3px;
+.panel-left {
+  left: 0;
 }
 
-ul#navigation-bar a {
+.panel-right {
+  right: 0;
+}
+
+.main-content {
+  margin: 0 220px;
   padding: 20px;
-  background-color: #dcd8d0;
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
+  font-size: 36px;
+  text-align: center;
 }
 
-ul#navigation-bar a:hover {
-  color: #968d81;
-  font-weight: bold;
+.block {
+  width: 400px;
+  height: 50px;
+  padding: 20px;
+  margin: 20px;
+  background-color: #363a5566;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+  text-align: center;
 }
-/**************************/
+
+#answer-block {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  color:#deddedc7;
+  background-color: #363a5566;
+}
+
+#question-block {
+  position: absolute;
+  top: 110%;
+  left: 10%;
+  background-color: #363a5566;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background:#6193C7;
+  color: rgba(226, 228, 232, 0.529);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
