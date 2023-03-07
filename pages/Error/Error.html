@@ -3,32 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/lab.css">
     <script src="js\lab.js"></script>
-    <style type="text/css">
-        input{
-            background-color: #9fc5f1;
-            width: 100px; 
-            height: 30px; 
-            line-height: 30px; 
-            text-align: center; 
-            color: #fff; 
-            font-size:14px; 
-            font-weight: bold;
-        }
-        #time p{
-            color: #1f6dc2;
-            font-size: 48px; 
-            font-weight: bold;
-            margin-left:90px;
-            margin-bottom:0px;
-        }
-    </style>
-<body>
-<div id="time">
-    <p>01:00</p>
-    <input type="button" value="开始" onclick="start()"/>
-    <input type="button" value="暂停" onclick="pause()"/>
-    <input type="button" value="继续" onclick="goOn()"/>
-</div>
+    <div id="count" class = "count">60</div>
+</head>
+<body style="background-color:#280707;" onload = init()>
+    <div class="container">
+        <figure id="figure1" class="figure">
+          <img src="img/symbol.png" alt="Figure 1">
+        </figure>
+        <figure id="figure2" class="figure">
+          <img src="img/symbol.png" alt="Figure 2">
+        </figure>
+    </div>    
+
+    <div class="panel panel-left">
+        <p></p>
+    </div>
+	<div class="panel panel-right">
+
+    </div>
+
 </body>
 </html>

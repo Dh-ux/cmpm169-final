@@ -3,13 +3,26 @@
 <head>
 	<title>Homepage</title>
 	<link rel="stylesheet" type="text/css" href="css/site.css">
-	<script src="./js/p5.js"></script>
 	<script type="text/javascript" src="js/site.js" defer></script>
+	<script src="./js/p5.js"></script>
 </head>
+
 <body style="background-color:#000000;">
 	<main id="main">
 		<header>
+			<time id="datetime" class = "datetime"></time>
 		</header>
+		  <!-- the time script -->
+		  <script>
+			function updateTime() {
+			  const now = new Date();
+			  const datetimeElement = document.getElementById('datetime');
+			  datetimeElement.textContent = now.toLocaleString();
+			}
+			updateTime();
+			setInterval(updateTime, 1000);
+		  </script>
+		  
 		<div class="introduction">
 			<svg xmlns width="300" height="300">
 				<circle id="arc1" class="circle" cx="150" cy="150" r="60" opacity=".89" fill="none" stroke="#632b26" stroke-width="8" stroke-linecap="square" stroke-opacity=".99213" paint-order="fill markers stroke" />
