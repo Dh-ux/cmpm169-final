@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/site.css">
 	<script type="text/javascript" src="js/site.js" defer></script>
 	<script src="./js/p5.js"></script>
+	
 </head>
 
 <body style="background-color:#000000;">
@@ -32,7 +33,7 @@
 						fill-opacity="0" stroke="#632b26" stroke-width="12" stroke-linecap="square" stroke-opacity=".99213" paint-order="fill markers stroke" />
 			</svg>
 		</div>
-		<div class="content">
+		<div class="content" id = "interface" style="display:none;">
 			<div class="content-right">
 			  <div class="right-infp">
 
@@ -51,7 +52,14 @@
 		  </div>
 		  
 		  
-
+		  <script>
+			function showElement() {
+			  const element = document.getElementById('interface');
+			  element.style.display = 'block';
+			}
+	  
+			setTimeout(showElement, 9000);
+		  </script>
 	</main>
 </body>
 </html>
