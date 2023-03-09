@@ -294,7 +294,7 @@ function draw() {
 // Function to validate the username and password
 function validateCredentials() {
   // Check if username and password are correct
-  if (usernameInput.value === 'project 8' && passwordInput.value === 'infinite') {
+  if (usernameInput.value === '8' && passwordInput.value === '8') {
     // If correct, redirect to the success page
     window.location.href = 'pages/Success/Success.html';
   } else {
