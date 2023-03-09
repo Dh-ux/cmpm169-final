@@ -26,7 +26,7 @@ function initializeVars() {
 
 function setup() {
   createCanvas(innerWidth, innerHeight);
-  background(0);
+  background(0,0,51);
   initializeVars();
   noStroke();
   smooth();

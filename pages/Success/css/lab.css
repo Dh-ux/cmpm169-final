@@ -1,8 +1,6 @@
 
 .container {
   position: relative;
-  width: 600px;
-  height: 400px;
   margin: auto;
 }
 .figure {
@@ -29,8 +27,8 @@ img {
   position: fixed;
   top: 0;
   height: 100%;
-  width: 500px;
-  background-color: #04061c;
+  width: 400px;
+  background-color: #0d0c3976;
   color: #fff;
   font-size: 24px;
   text-align: center;
@@ -64,16 +62,16 @@ img {
 
 #answer-block {
   position: absolute;
-  top: 30%;
-  left: 10%;
+  top: 150px;
+  left: 33.5%;
   color:#deddedc7;
   background-color: #363a5566;
 }
 
 #question-block {
   position: absolute;
-  top: 110%;
-  left: 10%;
+  top: 480px;
+  left: 33.5%;
   background-color: #363a5566;
 }
 
