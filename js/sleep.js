@@ -4,7 +4,7 @@ var initial_sleep = true;
 function resetTimer(init = false) {
     if (!initial_sleep) {
         clearTimeout(timeout);
-        timeout = setTimeout(goToSleep, 12000); // set timeout to 0.2 minutes
+        timeout = setTimeout(goToSleep, 10000); // set timeout to 0.2 minutes
         wakeUp();
     }
 }
@@ -32,7 +32,7 @@ function initWakeUp() {
     }
 }
 
-  setTimeout(initWakeUp, 9000);
+setTimeout(initWakeUp, 9000);
 
 document.addEventListener('mousemove', resetTimer);
 document.addEventListener('keydown', resetTimer);

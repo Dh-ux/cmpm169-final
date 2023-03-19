@@ -11,6 +11,7 @@ body{
   color: #6193C7;
   background-color: black;
   padding: 10px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .content{
@@ -148,5 +149,30 @@ svg circle{
   to{
     transform: rotate(360deg);
   }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.introduction {
+  animation-name: flicker;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
