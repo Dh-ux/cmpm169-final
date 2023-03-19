@@ -5,7 +5,7 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="css/lab.css">
     <script src="js\lab.js"></script>
-    <div id="count" class = "count">60</div>
+    <div id="count" class = "count">10</div>
 </head>
 <body style="background-color:#280707;" onload = init()>
     <div class="container">
@@ -17,12 +17,22 @@
         </figure>
     </div>    
 
-    <div class="panel panel-left">
+    <div class="panel panel-left" id = "leftBlock">
         <p></p>
     </div>
-	<div class="panel panel-right">
-
+	<div class="panel panel-right" id = 'rightBlock'>
     </div>
 
 </body>
 </html>
+<script>
+    const leftBlock = document.querySelector("#leftBlock");
+    const rightBlock = document.querySelector("#rightBlock");
+    // Add an event listener for when the window loads
+    window.addEventListener("load", function () {
+    // Update the opacity and transform values
+    //answerBlock.style.transform = "translateY(0)";
+    rightBlock.style.transform = "translateX(100vw)";
+    leftBlock.style.transform = "translateX(-100vw)";
+    });
+</script>

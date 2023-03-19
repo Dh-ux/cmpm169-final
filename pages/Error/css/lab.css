@@ -38,8 +38,8 @@ img {
   position: fixed;
   top: 0;
   height: 100%;
-  width: 500px;
-  background-color: #1c0404;
+  width: 732px;
+  background-color: #390c0c76;
   color: #fff;
   font-size: 24px;
   text-align: center;
@@ -48,10 +48,18 @@ img {
 
 .panel-left {
   left: 0;
+  background-color: #390c0c76;
+  /*transform: translateX(-100vw);
+  /* Set transition duration and easing function */
+  transition: transform 5s ease-out;
 }
 
 .panel-right {
   right: 0;
+  background-color: #390c0c76;
+  /*transform: translateX(100vw);
+  /* Set transition duration and easing function */
+  transition:transform 5s ease-out;
 }
 
 .main-content {

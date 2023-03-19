@@ -320,19 +320,49 @@ function launch_star(){
   }
 }
 
-
+const leftBlock = document.querySelector("#leftBlock");
+const rightBlock = document.querySelector("#rightBlock");
 
 // Function to validate the username and password
 function validateCredentials() {
   // Check if username and password are correct
   if (usernameInput.value === '8' && passwordInput.value === '8') {
     // If correct, redirect to the success page
-    window.location.href = 'pages/Success/Success.html';
+    leftBlock.style.transform = "translateX(0)";
+    leftBlock.style.opacity = "1";
+    rightBlock.style.transform = "translateX(0)";
+    rightBlock.style.opacity = "1";
+    pageSucess = true;
+    changePage();
+    //setTimeout(changePage(), 20000);
   } else {
     // If incorrect, redirect to the error page
-    window.location.href = 'pages/Error/Error.html';
+
+    leftBlock.style.transform = "translateX(0)";
+    leftBlock.style.opacity = "1";
+    leftBlock.style.background = "#380d0ac6";
+    rightBlock.style.transform = "translateX(0)";
+    rightBlock.style.opacity = "1";
+    rightBlock.style.background = "#380d0ac6";
+    pageSucess = false;
+    changePage();
+    //setTimeout(changePage(), 20000);
+
   }
 }
+
+let pageSucess = false;
+
+async function changePage(){
+  await delay();
+  if(pageSucess)
+{  window.location.href = 'pages/Success/Success.html';}
+else{
+  window.location.href = 'pages/Error/Error.html';
+}
+
+}
+
 
 // Add event listener to the login button
 loginBtn.addEventListener('click', function() {
@@ -340,3 +370,8 @@ loginBtn.addEventListener('click', function() {
   validateCredentials();
 });
 
+function delay() {
+  return new Promise((resolve) => {
+    setTimeout(resolve, 2000);
+  });
+}

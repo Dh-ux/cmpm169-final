@@ -176,3 +176,32 @@ svg circle{
   animation-timing-function: ease-in-out;
 }
 
+.panel {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 725px;
+  background-color: #0d0c39;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.panel-left {
+  left: 0;
+  transform: translateX(-50vw);
+  opacity: 0;
+  background-color: #0d0c39;
+  /* Set transition duration and easing function */
+  transition:opacity 2s, transform 2s ease-out;
+}
+
+.panel-right {
+  right: 0;
+  transform: translateX(50vw);
+  opacity: 0;
+  background-color: #0d0c39;
+  /* Set transition duration and easing function */
+  transition:opacity 2s,transform 2s ease-out;
+}

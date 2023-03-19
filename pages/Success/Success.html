@@ -19,11 +19,24 @@
         </div>
     </div>    
 	
-    <div class="panel panel-left">
+    <div class="panel panel-left" id = "leftBlock">
         <p></p>
     </div>
-	<div class="panel panel-right">
+	<div class="panel panel-right" id = 'rightBlock'>
     </div>
 
 </body>
 </html>
+<script>
+    const answerBlock = document.querySelector("#answer-block");
+    const leftBlock = document.querySelector("#leftBlock");
+    const rightBlock = document.querySelector("#rightBlock");
+    // Add an event listener for when the window loads
+    window.addEventListener("load", function () {
+    // Update the opacity and transform values
+    answerBlock.style.opacity = "1";
+    //answerBlock.style.transform = "translateY(0)";
+    rightBlock.style.transform = "translateX(100vw)";
+    leftBlock.style.transform = "translateX(-100vw)";
+    });
+</script>
