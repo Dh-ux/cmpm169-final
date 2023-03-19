@@ -30,6 +30,7 @@ class Star {
     this.maxSpeed = 8;
     this.launchTime = 450//int(random(60,300));
     this.launched = false;
+    this.to_launch = false;
   }
 
   move() {
@@ -41,11 +42,12 @@ class Star {
       this.velocity.add(attraction);
       this.velocity.limit(this.maxSpeed);
       this.brightness += 1
-      if(frameCount % this.launchTime == 0) {
+      if(this.to_launch == true){
         this.velocity = createVector(random(-1,1),random(-1,1));
         this.velocity.normalize();
         this.velocity.mult(random(1,12));
         this.launched = true;
+        this.to_launch = false;
       }
     }else{
     this.x += random(-1, 1);
@@ -182,11 +184,12 @@ class Stars {
       attraction.mult(0.05);
       this.velocity.add(attraction);
       this.velocity.limit(this.maxSpeed);
-      if(frameCount % this.launchTime == 0) {
+      if(this.to_launch == true) {
         this.velocity = p5.Vector.sub(createVector(this.originalX,this.originalY),center);
         this.velocity.normalize();
         this.velocity.mult(random(1,12));
         this.launched = true;
+        this.to_launch = false;
       }
     }else{
     let distance = dist(this.x, this.y, mouseX, mouseY);
@@ -275,20 +278,48 @@ function setup() {
 
 function draw() {
   background(0);
-  for (let star of stars) {
-    star.move();
+  if(! g_sleep){
+    for (let star of stars) {
+      star.move();
 
-    star.connect(star.nearest);
-    star.connect(star.other);
-    star.display();
+      star.connect(star.nearest);
+      star.connect(star.other);
+      star.display();
   }
   for (let star of star_array) {
     star.move();
     star.shine();
     star.display();
   } 
+}
   //infdraw();
 }
+
+window.g_sleep = false;
+
+//reset all stars to unlaunched state
+function reset_star(){
+  for (let star of stars) {
+    star.launched = false;
+  }
+  for (let star of star_array) {
+    star.launched = false;
+  } 
+}
+
+function launch_star(){
+  for (let star of stars) {
+    if(!star.launched){
+      star.to_launch = true;
+    }
+  }
+  for (let star of star_array) {
+    if(!star.launched){
+      star.to_launch = true;
+    }
+  }
+}
+
 
 
 // Function to validate the username and password
