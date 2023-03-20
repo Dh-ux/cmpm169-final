@@ -20,7 +20,7 @@ function initializeVars() {
   os = [];
   vs = [];
   loopScale = 200;
-  frameRate(120);
+  frameRate(60);
   forward = true;
 }
 
@@ -49,6 +49,7 @@ function drawLoop(scale, forwardVal) {
   let colorMap1 = map(abs(x), 0, rX, 0, 5);
   let colorMap2 = map(abs(y), 0, rY, 0, 5);
   fill(5, colorMap1, colorMap1);
+  ellipse(y, x, abs(x)*0.05 + 3, abs(x)*0.05 + 3);
   ellipse(x, y, abs(x)*0.05 + 3, abs(x)*0.05 + 3);
   pop();
 }
@@ -70,6 +71,7 @@ function drawTraces() {
       translate(width/2, height/2);
       fill(255, os[i]);
       ellipse(xs[i], ys[i], 1, 1);
+      ellipse(ys[i], xs[i], 1, 1);
       pop();
     }
   }
@@ -85,6 +87,7 @@ function updateTraces() {
   pop();
 }
 
+let iframe = 720;
 function draw() {
   drawTraces();
   refreshBackground();
@@ -101,16 +104,15 @@ function draw() {
   if (keyIsPressed) {
     updateTraces();
   }
-
-  if (mouseIsPressed) {
-    loopScale = abs(mouseX - width/2);
-    updateTraces();
-    if (mouseX < width/2) {
-      forward = false;
-    } 
-    else {
-      forward = true;
-    }
+  iframe--;
+  loopScale = abs(iframe);
+  updateTraces();
+  if (mouseX < width/2) {
+    forward = false;
+  } 
+  else {
+    forward = true;
   }
+
   //stardraw();
 }

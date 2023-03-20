@@ -345,10 +345,10 @@ function validateCredentials() {
 
     leftBlock.style.transform = "translateX(0)";
     leftBlock.style.opacity = "1";
-    leftBlock.style.background = "#380d0ac6";
+    leftBlock.style.background = "#380d0a";
     rightBlock.style.transform = "translateX(0)";
     rightBlock.style.opacity = "1";
-    rightBlock.style.background = "#380d0ac6";
+    rightBlock.style.background = "#380d0a";
     pageSucess = false;
     changePage();
     //setTimeout(changePage(), 20000);

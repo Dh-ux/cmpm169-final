@@ -22,7 +22,7 @@ var countdown = function(timeout){
     }
 }
 function init(){
-    countdown(5);
+    countdown(12);
 }
 
 function delay() {

@@ -38,7 +38,7 @@ img {
   position: fixed;
   top: 0;
   height: 100%;
-  width: 780px;
+  width: 50%;
   background-color: #390c0c76;
   color: #fff;
   font-size: 24px;
@@ -48,7 +48,7 @@ img {
 
 .panel-left {
   left: 0;
-  background-color: #390c0c76;
+  background-color: #390c0c;
   /*transform: translateX(-100vw);
   /* Set transition duration and easing function */
   transition: transform 5s ease-out;
@@ -56,7 +56,7 @@ img {
 
 .panel-right {
   right: 0;
-  background-color: #390c0c76;
+  background-color: #390c0c;
   /*transform: translateX(100vw);
   /* Set transition duration and easing function */
   transition:transform 5s ease-out;
