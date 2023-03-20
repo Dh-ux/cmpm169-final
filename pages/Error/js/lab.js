@@ -27,7 +27,7 @@ function init(){
 
 function delay() {
     return new Promise((resolve) => {
-      setTimeout(resolve, 5000);
+      setTimeout(resolve, 6000);
     });
 }
 

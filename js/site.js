@@ -377,6 +377,6 @@ loginBtn.addEventListener('click', function() {
 
 function delay() {
   return new Promise((resolve) => {
-    setTimeout(resolve, 2000);
+    setTimeout(resolve, 3000);
   });
 }

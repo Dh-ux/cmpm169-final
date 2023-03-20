@@ -60,6 +60,6 @@ async function returnMain() {
 
 function delay() {
     return new Promise((resolve) => {
-        setTimeout(resolve, 5000);
+        setTimeout(resolve, 3200);
     });
 }

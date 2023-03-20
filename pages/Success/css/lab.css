@@ -27,8 +27,8 @@ img {
   position: fixed;
   top: 0;
   height: 100%;
-  width: 728px;
-  background-color: #0d0c3976;
+  width: 50%;
+  background-color: #0d0c39e1;
   color: #fff;
   font-size: 24px;
   text-align: center;
@@ -40,7 +40,7 @@ img {
   background-color: #0d0c3976;
   /*transform: translateX(-100vw);
   /* Set transition duration and easing function */
-  transition: transform 5s ease-out;
+  transition: transform 3s ease-out;
 }
 
 .panel-right {
@@ -48,7 +48,7 @@ img {
   background-color: #0d0c3976;
   /*transform: translateX(100vw);
   /* Set transition duration and easing function */
-  transition:transform 5s ease-out;
+  transition:transform 3s ease-out;
 }
 
 .main-content {
