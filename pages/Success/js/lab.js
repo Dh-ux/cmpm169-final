@@ -27,6 +27,7 @@ function validateQuestion() {
     }
     var answer = answers[question] || "Sorry, I don't know the answer to that question.";
     answerText.innerText = answer;
+    launch_star()
 
     // Typing effect for answer block
     const initialText = answerText.innerText;
@@ -53,6 +54,7 @@ submitButton.addEventListener('click', function () {
 });
 
 async function returnMain() {
+    reset_star()
     await delay();
     window.location.href = '../../index.html';
 

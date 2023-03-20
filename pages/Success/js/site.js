@@ -18,7 +18,7 @@ class Stars {
     this.acceleration = createVector(0,0);
     this.maxSpeed = 5;
     this.launchTime = 450;
-    this.launched = true;
+    this.launched = false;
   }
 
   shine() {
@@ -44,7 +44,6 @@ class Stars {
       }
     }else{
     let distance = dist(this.x, this.y, mouseX, mouseY);
-    let distance1 = dist(this.x, this.y, x, y);
     if (distance < this.maxDistance) {
       let angle = atan2(
       mouseY - this.y, mouseX - this.x);
@@ -99,6 +98,25 @@ function gradientLine(x1, y1, x2, y2, color1, color2) {
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
+  for (let i = 0; i < 30; i++) {
+    let x = random(width);
+    let y = random(height);
+    let r = random(1, 4);
+    let color = (100 + random(155), 100 + random(155), 100 + random(155));
+    
+    stars.push(new Star(x, y, r, color));
+  }
+  for (let i = 0; i < stars.length; i++) {
+    let nearestStar = stars[i].findNearest();
+    stars[i].nearest = nearestStar;
+    for (let x = 0; x < 5; x++) {
+      let other = random(stars);
+      if (other !== stars[i] && other != nearestStar && dist(stars[i].x, stars[i].y, other.x, other.y) < 150) {
+        stars[i].other = other;
+        break;
+      }
+    }
+  }
   for (let i = 0; i < 300; i++) {
     let x = random(width);
     let y = random(height);
@@ -109,148 +127,31 @@ function setup() {
   //infsetup();
 }
 
-function reset_star(){
-  for (let star of star_array) {
-    star.launched = false;
-  } 
-}
-
-function launch_star(){
-
-  for (let star of star_array) {
-    star.launched = false;
-    star.to_launch = true;
-  }
-}
-
-
-
-//inifnity symbol draw
-let s, prevSecond;
-let angle, rY, rX;
-let a, b, x, y;
-let xs = [], ys = [], os = [];
-let vs = [];
-let loopScale;
-let forward;
-let n = 0.0;
-
-function initializeVars() {
-  angle = 0;
-  rY = 80 * 0.5;
-  rX = 220 * 0.5;
-  a = 1.5;
-  b = 3;
-  prevSecond = 0;
-  xs = [];
-  ys = [];
-  os = [];
-  vs = [];
-  loopScale = 200;
-  frameRate(120);
-  forward = true;
-}
-
-function setup() {
-  createCanvas(innerWidth, innerHeight);
-  background(0,0,51);
-  initializeVars();
-  noStroke();
-  smooth();
-  for (let i = 0; i < 300; i++) {
-    let x = random(width);
-    let y = random(height);
-    let r = random(1, 2.5);
-    let color =(random(160), random(160), random(160));
-    star_array.push(new Stars(x, y, r, color));
-  }
-  //starsetup();
-}
-
-function drawLoop(scale, forwardVal) {
-  let scaleFactor = map(scale, 0, width/2, 2.5, 0.8);
-
-  if (forwardVal) {
-    angle += 1 * scaleFactor;
-  } 
-  else {
-    angle -= 1 * scaleFactor;
-  }
-  push();
-  translate(width/2, height/2);
-  x = rX * sin(radians(a*angle)) * (scale*0.01);
-  y = rY * sin(radians(b*angle)) * (scale*0.01);
-  let colorMap1 = map(abs(x), 0, rX, 0, 5);
-  let colorMap2 = map(abs(y), 0, rY, 0, 5);
-  fill(5, colorMap1, colorMap1);
-  ellipse(x, y, abs(x)*0.05 + 3, abs(x)*0.05 + 3);
-  pop();
-}
-
-function refreshBackground() {
-  fill(0, 10);
-  rect(0, 0, width, height);
-}
-
-function drawTraces() {
-  for (let i = 0; i < vs.length; i++) {
-    let opacity = random(1);
-    os[i] -= opacity;
-    if (os[i] < 10) {
-      vs[i] = 1;
-    }
-    if (vs[i] == 0) {
-      push();
-      translate(width/2, height/2);
-      fill(255, os[i]);
-      ellipse(xs[i], ys[i], 1, 1);
-      pop();
-    }
-  }
-}
-
-function updateTraces() {
-  push();
-  translate(width/2, height/2);
-  xs.push(x);
-  ys.push(y);
-  os.push(random(255));
-  vs.push(0);
-  pop();
-}
-
 function draw() {
-  drawTraces();
-  refreshBackground();
-  drawLoop(loopScale, forward);
+  background(0);
+  if(! g_sleep){
+    for (let star of stars) {
+      star.move();
+
+      star.connect(star.nearest);
+      star.connect(star.other);
+      star.display();
+  }
   for (let star of star_array) {
     star.move();
     star.shine();
     star.display();
   } 
-  s = second();
-  if (prevSecond != s) {
-    loopScale = map(noise(n), 0, 1, 0, width/2);
-    prevSecond = s;
-  }
-
-  n += 0.01;
-
-  if (keyIsPressed) {
-    updateTraces();
-  }
-
-  if (mouseIsPressed) {
-    loopScale = abs(mouseX - width/2);
-    updateTraces();
-    if (mouseX < width/2) {
-      forward = false;
-    } 
-    else {
-      forward = true;
-    }
-  }
-  //stardraw();
+}
+  //infdraw();
 }
 
 
+function launch_star(){
+
+  for (let star of star_array) {
+    if(!star.launched){
+      star.to_launch = true;
+    }
+  }
+}
