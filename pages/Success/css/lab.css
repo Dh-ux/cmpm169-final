@@ -27,7 +27,7 @@ img {
   position: fixed;
   top: 0;
   height: 100%;
-  width: 700px;
+  width: 728px;
   background-color: #0d0c3976;
   color: #fff;
   font-size: 24px;
@@ -37,16 +37,18 @@ img {
 
 .panel-left {
   left: 0;
+  background-color: #0d0c3976;
   /*transform: translateX(-100vw);
   /* Set transition duration and easing function */
-  transition: transform 10s ease-out;
+  transition: transform 5s ease-out;
 }
 
 .panel-right {
   right: 0;
+  background-color: #0d0c3976;
   /*transform: translateX(100vw);
   /* Set transition duration and easing function */
-  transition:transform 10s ease-out;
+  transition:transform 5s ease-out;
 }
 
 .main-content {
@@ -57,8 +59,8 @@ img {
 }
 
 .block {
-  width: 400px;
-  height: 50px;
+  width: 500px;
+  height: 100px;
   padding: 20px;
   margin: 20px;
   background-color: #363a5566;
@@ -77,12 +79,15 @@ img {
   /*transform: translateY(-100vw);
   /* Set transition duration and easing function */
   transition: opacity 2s, transform 2s ease-out;
+  word-wrap: break-word;
+  padding: 5px;
 }
+
 
 #question-block {
   position: absolute;
   top: 480px;
-  left: 33.5%;
+  left: 32.5%;
   background-color: #363a5566;
 }
 

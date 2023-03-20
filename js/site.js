@@ -3,6 +3,11 @@ var usernameInput = document.getElementById('username');
 var passwordInput = document.getElementById('password');
 var loginBtn = document.getElementById('login-btn');
 
+window.addEventListener('load', function() {
+  var overlay = document.querySelector('.overlay');
+  overlay.classList.add('transparent');
+});
+
 //This is a generated interactive constella like page.
 //The stars will move away from your mouse
 //If you press mouse button, stars will be attracted to your mouse
