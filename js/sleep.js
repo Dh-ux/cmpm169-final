@@ -4,7 +4,7 @@ var initial_sleep = true;
 function resetTimer(init = false) {
     if (!initial_sleep) {
         clearTimeout(timeout);
-        timeout = setTimeout(goToSleep, 10000); // set timeout to 0.2 minutes
+        timeout = setTimeout(goToSleep, 6000); // set timeout to 0.2 minutes
         wakeUp();
     }
 }
